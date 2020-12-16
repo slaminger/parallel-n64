@@ -187,6 +187,16 @@ ifneq (,$(findstring unix,$(platform)))
       endif
    endif
    
+   # Libre Computer La Frite
+    ifneq (,$(findstring mali-drm-gles2,$(platform)))
+      BOARD = mali-drm-gles2
+      GLES = 1
+      GL_LIB := -lGLESv2
+      CPUFLAGS += -DNO_ASM -DARM -D__arm__ -DARM_ASM -D__NEON_OPT -DNOSSE -DARM_FIX
+      CPUFLAGS += -marm -mfloat-abi=hard
+      HAVE_NEON = 1
+      WITH_DYNAREC=arm
+      endif
    
    # Classic Platforms ####################
    # Platform affix = classic_<ISA>_<µARCH>
