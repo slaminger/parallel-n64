@@ -2,7 +2,7 @@ DEBUG=0
 PERF_TEST=0
 HAVE_SHARED_CONTEXT=0
 WITH_CRC=brumme
-FORCE_GLES=0
+FORCE_GLES=1
 HAVE_OPENGL=1
 HAVE_VULKAN_DEBUG=0
 GLIDEN64=0
@@ -191,7 +191,7 @@ ifneq (,$(findstring unix,$(platform)))
     ifneq (,$(findstring mali-drm-gles2,$(platform)))
       GLES = 1
       GL_LIB := -lGLESv2
-      CPUFLAGS += -DNO_ASM -DARM -D__arm__ -DARM_ASM -D__NEON_OPT -DNOSSE -DARM_FIX
+      CPUFLAGS += -DNO_ASM -DARM -D__arm__ -DARM_ASM -DNOSSE -DARM_FIX
       CPUFLAGS += -march=armv8-a -mtune=cortex-a53
       HAVE_NEON = 1
       WITH_DYNAREC=arm
