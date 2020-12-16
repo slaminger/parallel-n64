@@ -193,7 +193,7 @@ ifneq (,$(findstring unix,$(platform)))
       GL_LIB := -lGLESv2
       CPUFLAGS += -DNO_ASM -DARM -D__arm__ -DARM_ASM -DNOSSE -DARM_FIX
       CPUFLAGS += -march=armv8-a -mtune=cortex-a53
-      HAVE_NEON = 1
+      HAVE_NEON = 0
       WITH_DYNAREC=arm
       endif
    
